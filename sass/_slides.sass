@@ -1,0 +1,38 @@
+.itens
+  padding: 0 4rem 0 4rem
+  @include celular 
+    padding: 0 2rem 0 2rem 
+  @include celular-md
+    padding: 0 1rem 0 1rem    
+.slide-img
+  padding-top: 58px
+.new
+  border-bottom: 2px solid $vermelho
+  padding: 10px
+  @extend %color-vermelho
+  font:
+    family: 'Orbitron', sans-serif
+    size: 25px
+  letter-spacing: 1.3px
+.titulo
+  max-width: 300px 
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+  font: 
+    size: 15px
+    weight: 600
+.preco
+  font-size: 18px
+  font-weight: 600
+  color: #f00
+.card-footer
+  display: flex
+  width: 100% 
+  a
+    width: 100%
+    background: $amarelo 
+    @extend %color-preto
+  .cart
+    background: transparent
+    border: .2px solid $amarelo  

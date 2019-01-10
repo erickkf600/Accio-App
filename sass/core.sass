@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron|Yantramanav')
+//MIXINS
+@mixin back($escolha)
+  background: $escolha
+  background-attachment: fixed
+  background-repeat: no-repeat
+  background-size: cover
+  
+@mixin transition($transicao) 
+  -webkit-transition: $transicao
+  -moz-transition: $transicao
+  -ms-transition: $transicao
+  -o-transition: $transicao
+  transition: $transicao 
+ 
+@mixin border-radius($radius) 
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
+  border-radius: $radius
+
+@mixin placeholder 
+  ::-webkit-input-placeholder 
+    @content
+  :-moz-placeholder         
+    @content
+  ::-moz-placeholder          
+    @content
+  :-ms-input-placeholder      
+    @content
+
+@mixin full-hd
+  @media screen and (min-width:1920px)
+    @content
+@mixin tablet
+  @media screen and (max-width:1024px)
+    @content
+@mixin tablet-mini
+  @media screen and (max-width:768px)
+    @content 
+@mixin celular
+  @media screen and (max-width:610px)
+    @content   
+@mixin celular-md
+  @media screen and (max-width:480px)
+    @content         
+@mixin celular-xs
+  @media screen and (max-width:320px)
+    @content 
+
+//ANIMAÇÃO
+@mixin animacao($anime) 
+  -webkit-animation: $anime
+  -moz-animation: $anime
+  -ms-animation: $anime
+  animation: $anime
+@mixin keyframe($movimento) 
+  @-webkit-keyframes #{$movimento}
+    @content
+  @-moz-keyframes #{$movimento}
+    @content
+  @-o-keyframes #{$movimento}
+    @content       
+//	EXTENDS
+%flex-col
+  display: flex
+  flex-flow: column
+%color-preto
+  color: #000
+%color-branco
+  color: #fff    
+%back-preto
+  background: #000
+%back-transparent
+  background: transparent       
+%color-vermelho
+  color: #f53d3d
+%letter-spacing
+  letter-spacing: 1.5px  
+//VARIAVEIS
+$amarelo: #fec107
+$vermelho: #f53d3d 
+$preto: #000
+
+@import "header"
+@import "slides"
+//cards ofertas
+.buy
+  font-size: 12px
+  text-indent: -7px 
+.anime
+  background: $amarelo
+
+  
+.buscou
+  display: none  
+ 
+
+@include keyframe( accio )
+  0%
+    top:0
+  100%
+    top:10px 
+
+
+
+     
