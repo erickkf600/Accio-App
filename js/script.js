@@ -1,14 +1,18 @@
 
 $(document).ready(function(){
-  $('.sidenav').sidenav(),
-  $('.carousel').carousel(),
-  $('.collapsible').collapsible(),
+  $('.tabs').tabs();
+  $('.datepicker').datepicker({
+    format: "dd mmm, yy"
+  });
+  $('.sidenav').sidenav();
+  $('.carousel').carousel();
+  $('.collapsible').collapsible();
   $('.carousel.carousel-slider').carousel({
    indicators: true,
    fullWidth: true
  });
   $('.pesq-icon').click(function(){
-   $(".pesq-icon").toggleClass("close"),
+   $(".pesq-icon").toggleClass("close");
    $(".search-box").toggleClass("exibir")
  });
   var swiper = new Swiper('.swiper-container', {

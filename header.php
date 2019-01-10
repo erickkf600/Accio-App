@@ -8,8 +8,8 @@
         <h1>ACCIO</h1>
         <p>Buscou? Achou.</p>
         <div class="buttons">
-          <a class="waves-effect waves-red btn" style="margin-bottom: 1rem">Login<i class="fas fa-user"></i></a>
-          <a class="waves-effect waves-yellow btn" id="cad">Cadastre-se<i class="fas fa-user-plus"></i></a>
+          <a href="login.php" class="waves-effect waves-red btn" style="margin-bottom: 1rem">Login<i class="fas fa-user"></i></a>
+          <a href="cadastro.php" class="waves-effect waves-yellow btn" id="cad">Cadastre-se<i class="fas fa-user-plus"></i></a>
         </div>
         <!-- php
         <a href="#"><img class="circle" src="img/user.png"></a>
