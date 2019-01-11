@@ -1,3 +1,9 @@
+<?php 
+  session_start();
+  include "banco.php";
+  $query = "select * from login";
+  $consulta = mysqli_query($con, $query);
+?> 
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -21,5 +27,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.min.js"></script>
   <script src="js/script.js"></script>
+  <?php 
+    if(isset($_SESSION['email'])){
+      while($f = mysqli_fetch_assoc($consulta)){
+      $usuario = $f['usuario'];   
+      ?>
+      <script>
+        var toastHTML = '<span>Bem Vindo <?php echo $usuario ?></span>';
+        M.toast({html: toastHTML});
+      </script>
+  <?php }} ?>
 </body>
 </html>

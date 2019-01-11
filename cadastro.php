@@ -20,58 +20,59 @@
       <li class="tab"><a href="#test3">Usuário</a></li>
     </ul>
     <div class="container">
-      <form  method="post" action="login-func.php">
+      <form  method="post" action="cad-func.php">
         <div id="test1" class="col s12">
 
           <div class="input-field">
-            <input id="name" type="text" class="validate" name="nome" required>
+            <input id="name" type="text" name="nome" required>
             <label for="name">Nome Completo</label>
           </div>
 
           <div class="input-field">
-            <input id="number" type="number" class="validate" name="telefone" required>
-            <label for="number">Telefone</label>
+            <input id="telefone" type="number"  name="telefone" required>
+            <label for="telefone">Telefone</label>
           </div>
 
           <div class="input-field">
             <input type="text" class="datepicker" name="nascimento" required>
-            <label for="number">Nascimento</label>
+            <label for="nascimento">Nascimento</label>
           </div>
 
           <div class="input-field">
-            <input id="number" type="number" class="validate" name="cpf" required>
-            <label for="number">CPF</label>
+            <input id="cpf" type="number" name="cpf" required>
+            <label for="cpf">CPF</label>
           </div>
         </div>
+
         <div id="test2" class="col s12">
 
           <div class="input-field">
-            <input id="number" type="number" class="validate" name="cep" required>
+            <input id="cep" type="number" name="cep" required>
             <label for="cep">CEP</label>
           </div>
 
-          <div class="input-field col s12">
-            <input id="endereco" type="text" class="validate" name="endereco" required>
+          <div class="input-field">
+            <input id="endereco" type="text" name="endereco" required>
             <label for="endereco">Endereço</label>
           </div>
 
-          <div class="input-field col s12">
-            <input id="number" type="number" class="validate" name="numero" required>
+          <div class="input-field">
+            <input id="numero" type="number" name="numero" required>
             <label for="numero">Número</label>
           </div>
 
           <div class="input-field">
-            <input id="text" type="text" class="validate" name="cidade" required>
+            <input id="cidade" type="text" name="cidade" required>
             <label for="cidade">Cidade</label>
           </div>
           <div class="row">
             <div class="input-field col s9">
-              <input id="text" type="text" class="validate" name="bairro" required>
+              <input id="bairro" type="text" name="bairro" required>
               <label for="bairro">Bairro</label>
             </div>
 
             <div class="input-field col s3">
-              <input id="text" type="text" class="validate" name="estado" required>
+              <input id="estado" type="text" name="estado" required>
               <label for="estado">Estado</label>
             </div>
           </div>
@@ -79,19 +80,19 @@
         <div id="test3" class="col s12">
 
           <div class="input-field">
-            <input id="email" type="email" class="validate" name="email" required>
+            <input id="email" type="email" name="email" required>
             <label for="email">Email</label>
           </div>
 
           <div class="input-field">
-            <input id="number" type="number" class="validate" name="telefone" required>
-            <label for="number">Usuário</label>
+            <input id="usuario" type="text" name="usuario" required>
+            <label for="usuario">Usuário</label>
           </div>
 
           <div class="input-field">
-            <input id="number" type="number" class="validate" name="cpf" required>
-            <label for="number">CPF</label>
-            <button class="btn waves-effect waves-yellow cadastrar" type="submit">CADASTAR-SE</button>
+            <input id="password" type="password" name="senha" required>
+            <label for="password">Senha</label>
+            <button class="btn waves-effect waves-yellow cadastrar modal-trigger" type="submit" data-target="modal1">CADASTRE-SE</button>
           </div>
         </div>
       </form>

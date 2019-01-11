@@ -19,8 +19,7 @@
         <div class="row">
           <div class="input-field col s12">
             <input id="email" type="email" class="validate" name="email" required>
-            <label for="email">Email</label>
-            <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
+            <label for="email">Email ou Usuário</label>
           </div>
           <div class="input-field col s12">
             <input id="password" type="password" class="validate" name="senha" required>

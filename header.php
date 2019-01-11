@@ -2,20 +2,28 @@
   <ul id="slide-out" class="sidenav">
     <li>
       <div class="user-view" id="user">
-        <div class="background">
-          <img src="img/fundo2.jpg" width="100%">
-        </div>
-        <h1>ACCIO</h1>
-        <p>Buscou? Achou.</p>
-        <div class="buttons">
-          <a href="login.php" class="waves-effect waves-red btn" style="margin-bottom: 1rem">Login<i class="fas fa-user"></i></a>
-          <a href="cadastro.php" class="waves-effect waves-yellow btn" id="cad">Cadastre-se<i class="fas fa-user-plus"></i></a>
-        </div>
-        <!-- php
-        <a href="#"><img class="circle" src="img/user.png"></a>
-        <a href="#"><span class="white-text name">John Doe</span></a> -->
+        <?php 
+        if(empty($_SESSION['email'])){?>
+          <div class="background">
+            <img src="img/fundo2.jpg" width="100%">
+          </div>
+          <h1>ACCIO</h1>
+          <p>Buscou? Achou.</p>
+          <div class="buttons">
+            <a href="login.php" class="waves-effect waves-red btn" style="margin-bottom: 1rem">Login<i class="fas fa-user"></i></a>
+            <a href="cadastro.php" class="waves-effect waves-yellow btn" id="cad">Cadastre-se<i class="fas fa-user-plus"></i></a>
+          </div>
+        <?php }else{ 
+          while($f = mysqli_fetch_assoc($consulta)){
+            $usuario = $f['usuario'];
+          ?>
+          <div class="background">
+            <img src="img/fundo2.jpg" width="100%">
+          </div>
+          <a href="#"><img class="circle" src="img/user.png"></a>
+          <a href="#"><span class="white-text name"><?php echo $usuario ?></span></a> 
+        <?php }} ?>
       </div>
-      <hr>
     </li>
     <li id="categorias">Categorias</li>
     <li id="home"><a href="#">Home</a></li>
@@ -80,6 +88,9 @@
         </li>
       </ul>
     </li>
+    <?php if(isset($_SESSION['email'])){?> 
+    <li id="home"><a href="sair.php">SAIR</a></li>
+  <?php } ?>
     <li><p class="footer">Copyright © ACCIO - 2018. All right reserved.</p></li>    
   </ul>
   <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="fas fa-bars"></i></a>
