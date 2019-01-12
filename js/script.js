@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
   $('.tabs').tabs();
-  $('.modal').modal();
+  $('select').formSelect();
   $('.datepicker').datepicker({
     format: "dd mmm, yy"
   });

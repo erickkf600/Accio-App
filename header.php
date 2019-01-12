@@ -101,7 +101,7 @@
         <button class="pesq-icon"></button>
       </div>
       <div class="botao">
-        <a href="">
+        <a href="carrinho.php">
           <button class="carrinho"></button>
         </a>
       </div>

@@ -76,7 +76,18 @@
 %color-vermelho
   color: #f53d3d
 %letter-spacing
-  letter-spacing: 1.5px  
+  letter-spacing: 1.5px 
+%arrows
+  position: absolute
+  top: 45%
+  margin-top: -22px
+  z-index: 10
+  cursor: pointer
+  &:focus
+    outline: none
+  i
+    font-size: 3rem
+           
 //VARIAVEIS
 $amarelo: #fec107
 $vermelho: #f53d3d 
@@ -84,54 +95,22 @@ $preto: #000
 
 @import "header"
 @import "slides"
+@import "carrinho"
+@import "forms"
 //cards ofertas
 .buy
   font-size: 12px
   text-indent: -7px 
-.anime
-  background: $amarelo
+.proximo
+  right: 0 
+  @extend %arrows
+  @extend %color-vermelho
+.voltar    
+  left: 0 
+  @extend %arrows
+  @extend %color-vermelho    
+    
 
-  
-.buscou
-  display: none  
- 
-
-@include keyframe( accio )
-  0%
-    top:0
-  100%
-    top:10px 
-
-//LOGIN
-#body
-  @include back(url(../img/background.jpg))
-#form
-  margin-top: 10rem
-.input 
-  border-color: #f00
-  &:focus
-    border-bottom: 1px solid #000
-.conta
-  background: #f00
-  width: 100%
-  height: 40px  
-  font-weight: 600
-
-//CADASTRO  
-#tabs
-  margin-top: 4rem
-.cadastrar
-  background: #f00
-  margin-top: 4rem
-  width: 100%
-  height: 40px  
-  font-weight: 600
-#erro
-  font-size: 4rem
-  padding: 50px
-  line-height: 50px 
-  a
-    font-size: 3rem
    
  
   

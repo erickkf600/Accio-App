@@ -1,0 +1,38 @@
+#cart
+  margin-top: 4.5rem
+  padding: 0 10px 0 10px
+  .sub
+    display: flex
+    justify-content: space-between
+    p
+      @extend %color-vermelho 
+      font:
+        size: 23px
+        family: Yantramanav
+        weight: bold
+  .actions 
+    padding-bottom: 2rem    
+#tab-cart
+  position: relative
+  tbody
+    tr
+      padding-top: 20px
+    td
+      display: flex
+      flex-flow: column
+      padding: .7rem
+      min-width: 320px
+      &:first-child
+        padding: 10px
+        margin-bottom: 20px
+      &:before
+        content: attr(data-th)
+        font-weight: bold
+        width:100%
+      img
+        width: 90%
+        display: block
+        margin: 0 auto  
+#table-text
+  position: absolute
+  right: 10px 
