@@ -2,8 +2,9 @@
 $(document).ready(function(){
   $('.tabs').tabs();
   $('select').formSelect();
+  $('.modal').modal();
   $('.datepicker').datepicker({
-    format: "dd mmm, yy"
+    format: "mm/dd/yy"
   });
   $('.sidenav').sidenav();
   $('.carousel').carousel();

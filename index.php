@@ -1,8 +1,6 @@
 <?php 
   session_start();
   include "banco.php";
-  $query = "select * from login";
-  $consulta = mysqli_query($con, $query);
 ?> 
 <!doctype html>
 <html lang="pt-br">
@@ -28,6 +26,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.min.js"></script>
   <script src="js/script.js"></script>
   <?php 
+    $query = "select * from login";
+    $consulta = mysqli_query($con, $query);
     if(isset($_SESSION['email'])){
       while($f = mysqli_fetch_assoc($consulta)){
       $usuario = $f['usuario'];   

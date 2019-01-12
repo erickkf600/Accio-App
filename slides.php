@@ -18,7 +18,7 @@
         $preco = number_format($preco, 2, ',','.');
         ?>
         <div class="swiper-slide">
-          <a href="product-page.php">
+          <a href="product-page.php?id=<?php  echo $f['idprod']; ?>">
             <div class="card">
               <div class="card-image">
                 <img src="img/produtos/<?php echo $f['img']; ?>">
@@ -28,12 +28,12 @@
                 <p class="titulo"><?php echo $f['titulo']; ?></p>
                 <p class="preco">R$ <?php echo $preco ?></p>
               </div>
+          </a> 
               <div class="card-footer">
                 <a class="waves-effect waves-red btn-small">Comprar</a>
                 <a href="carrinho.php?idprod=<?php  echo $f['idprod']; ?>" class="waves-effect waves-yellow btn-small cart"><i class="fas fa-cart-plus"></i></a>
               </div>
             </div>
-          </a> 
         </div>
       <?php } ?>
     </div>

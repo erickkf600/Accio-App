@@ -10,7 +10,7 @@
           $preco = number_format($preco, 2, ',','.');
       ?>
         <div class="col s6 m6 l4 xl3">
-          <a href="produto.php?id=<?php  echo $f['idprod']; ?>">
+          <a href="product-page.php?id=<?php  echo $f['idprod']; ?>">
             <div class="card">
               <div class="card-image">
                 <img src="img/produtos/<?php echo $f['img']; ?>">

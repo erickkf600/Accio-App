@@ -1,3 +1,10 @@
+<?php
+   include "banco.php";
+   $id = $_GET['id'];
+   $busca = "SELECT * FROM produto WHERE idprod='$id'";
+   $contect = mysqli_query($con, $busca);
+   $total = mysqli_num_rows($contect);
+?>
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -14,10 +21,16 @@
 <body>
   <header><?php include "header-back.php" ?></header>
   <main id="cart">
+    <?php 
+       while($f = mysqli_fetch_array($contect)){
+       $preco2 = $f['preco'];
+       $preco = $f['preco'];
+       $preco = number_format($preco, 2, ',','.');
+   ?>
    <div class="swiper-container">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <img src="img/produtos/1.jpg" width="100%">
+        <img src="img/produtos/<?php echo $f['img']; ?>" width="100%">
       </div>
       <div class="swiper-slide">
         <img src="img/produtos/1.2.jpg" width="100%">
@@ -35,10 +48,11 @@
     <div class="voltar"><i class="fas fa-chevron-left"></i></div>
   </div>
   <div class="col s12 m5">
-    <div class="card-panel light">
-      <p class="titulo">Gabinete NZXT Phantom 530</p>
+    <div class="card-panel light" id="panel-card">
+      <p class="titulo-prod"><?php echo $f['titulo']; ?></p>
       <p>A vista</p>
-      <p class="preco">R$ 750, 00</p><div class="card-footer">
+      <p class="preco">R$ <?php echo $preco ?></p>
+      <div class="card-footer">
         <a class="waves-effect waves-red btn-small buy">Comprar</a>
         <a href="carrinho.php?idprod" class="waves-effect waves-yellow btn-small cart"><i class="fas fa-cart-plus"></i></a>
       </div>
@@ -53,12 +67,22 @@
       </ul>
     </div>
     <div class="card-content lighten-4">
-      <div id="card1">Test 1</div>
-      <div id="card2">Test 2</div>
-      <div id="card3">Test 3</div>
+      <div id="card1">
+        <p><?php echo $f['detalhes']; ?></p>
+      </div>
+      <div id="card2">
+        <ul>
+          <?php echo $f['conteudo']; ?>
+        </ul>
+      </div>
+      <div id="card3">
+        <div class="col m3">
+            <input min="0" type="number" class="form-control" id="cep" placeholder="_ _ _ _ _ - _ _ _">
+        </div>
+      </div>
     </div>
   </div>
-  
+  <?php } ?>
 </main>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
